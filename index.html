@@ -244,6 +244,12 @@
             filter: drop-shadow(0 0 10px var(--color-cyan));
         }
 
+        .benefit-icon img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
         .benefit-card h3 {
             font-size: 1.6rem;
             margin-bottom: 15px;
@@ -298,6 +304,105 @@
 
         .footer-logo img:hover {
             opacity: 1;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--color-black);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 50% 50%, rgba(255, 0, 80, 0.1) 0%, transparent 70%);
+        }
+
+        .stats-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--color-dark);
+            border-radius: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-pink) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-item:hover {
+            border-color: var(--color-cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 242, 234, 0.2);
+        }
+
+        .stat-item:hover::before {
+            opacity: 0.05;
+        }
+
+        .stat-item > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px var(--color-cyan));
+        }
+
+        .stat-icon img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--color-light-gray);
+            font-weight: 300;
         }
 
         /* Coaches Section */
@@ -555,6 +660,22 @@
             .footer-logo img {
                 width: 140px;
             }
+
+            .stats {
+                padding: 60px 0;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+
+            .stat-label {
+                font-size: 1rem;
+            }
+
+            .stats-grid {
+                gap: 25px;
+            }
         }
 
         /* Fade in animation on scroll */
@@ -597,25 +718,33 @@
             
             <div class="benefits-grid">
                 <div class="benefit-card fade-in-up">
-                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-icon">
+                        <img src="./images/dollar_7994407.gif" alt="ไม่โดนหักค่าคอม">
+                    </div>
                     <h3>ไม่โดนหักค่าคอม</h3>
                     <p>รายได้ของคุณเป็นของคุณทั้งหมด ไม่มีการหักเปอร์เซ็นต์ใดๆ</p>
                 </div>
-                
+
                 <div class="benefit-card fade-in-up">
-                    <div class="benefit-icon">🎬</div>
+                    <div class="benefit-icon">
+                        <img src="./images/video_16061083.gif" alt="คลิปปักตระกร้าฟรี">
+                    </div>
                     <h3>คลิปปักตระกร้าฟรี</h3>
                     <p>รับคลิปปักตระกร้าคุณภาพสูงจากโค้ชมืออาชีพ ฟรี!</p>
                 </div>
-                
+
                 <div class="benefit-card fade-in-up">
-                    <div class="benefit-icon">🎓</div>
+                    <div class="benefit-icon">
+                        <img src="./images/technology_19026678.gif" alt="ส่วนลด 50% คอร์ส AI">
+                    </div>
                     <h3>ส่วนลด 50% คอร์ส AI</h3>
                     <p>เรียนคอร์สสอนทำคลิปปักตระกร้าด้วย AI ในราคาพิเศษ</p>
                 </div>
-                
+
                 <div class="benefit-card fade-in-up">
-                    <div class="benefit-icon">🛠️</div>
+                    <div class="benefit-icon">
+                        <img src="./images/service-tools_15370735.gif" alt="เครื่องมือครบครัน">
+                    </div>
                     <h3>เครื่องมือครบครัน</h3>
                     <p>เข้าถึงเครื่องมือสำหรับนายหน้าและ AI Tools มากมาย</p>
                 </div>
@@ -660,6 +789,37 @@
                             และการใช้ AI ช่วยทำงานนายหน้าให้มีประสิทธิภาพสูงสุด
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in-up">
+                    <div class="stat-icon">
+                        <img src="./images/online-order_15575683.gif" alt="ออเดอร์">
+                    </div>
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">มากกว่า 10,000+ ออเดอร์</div>
+                </div>
+
+                <div class="stat-item fade-in-up">
+                    <div class="stat-icon">
+                        <img src="./images/protected_18873837.gif" alt="ยอดขาย">
+                    </div>
+                    <div class="stat-number" data-target="1000000">0</div>
+                    <div class="stat-label">ยอดขายสูงสุดมากกว่า 1+ ล้าน</div>
+                </div>
+
+                <div class="stat-item fade-in-up">
+                    <div class="stat-icon">
+                        <img src="./images/blogger_19003155.gif" alt="ครีเอเตอร์">
+                    </div>
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">มากกว่า 500+ ครีเอเตอร์</div>
                 </div>
             </div>
         </div>
@@ -718,6 +878,41 @@
 
         document.querySelectorAll('.fade-in-up').forEach(element => {
             observer.observe(element);
+        });
+
+        // Counter Animation for Stats
+        const counterObserverOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const finalValue = parseInt(target.getAttribute('data-target'));
+                    const duration = 4000; // 4 seconds - slower animation
+                    const increment = finalValue / (duration / 16); // 60fps
+                    let currentValue = 0;
+
+                    const updateCounter = () => {
+                        currentValue += increment;
+                        if (currentValue < finalValue) {
+                            target.textContent = Math.floor(currentValue).toLocaleString('th-TH');
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            target.textContent = finalValue.toLocaleString('th-TH') + '+';
+                        }
+                    };
+
+                    updateCounter();
+                    counterObserver.unobserve(target); // Run animation only once
+                }
+            });
+        }, counterObserverOptions);
+
+        document.querySelectorAll('.stat-number').forEach(element => {
+            counterObserver.observe(element);
         });
 
         // Parallax effect on hero
