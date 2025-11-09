@@ -9,6 +9,9 @@
     <link rel="icon" type="image/png" href="./images/favicon_1.png">
     <link rel="apple-touch-icon" href="./images/favicon_1.png">
 
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     <!-- Google Fonts - Sarabun -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -181,6 +184,16 @@
             font-weight: 800;
             margin-bottom: 20px;
             color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .section-title lottie-player {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
         }
 
         .section-subtitle {
@@ -244,10 +257,12 @@
             filter: drop-shadow(0 0 10px var(--color-cyan));
         }
 
-        .benefit-icon img {
+        .benefit-icon img,
+        .benefit-icon lottie-player {
             width: 80px;
             height: 80px;
             object-fit: contain;
+            margin: 0 auto;
         }
 
         .benefit-card h3 {
@@ -382,10 +397,12 @@
             filter: drop-shadow(0 0 15px var(--color-cyan));
         }
 
-        .stat-icon img {
+        .stat-icon img,
+        .stat-icon lottie-player {
             width: 70px;
             height: 70px;
             object-fit: contain;
+            margin: 0 auto;
         }
 
         .stat-number {
@@ -429,12 +446,13 @@
         }
 
         .coach-card {
-            background: var(--color-white);
+            background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
             border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 40px rgba(0, 242, 234, 0.2);
             transition: all 0.4s ease;
             position: relative;
+            border: 1px solid rgba(0, 242, 234, 0.15);
         }
 
         .coach-card::after {
@@ -490,7 +508,7 @@
 
         .coach-info {
             padding: 35px;
-            background: var(--color-white);
+            background: transparent;
         }
 
         .coach-name {
@@ -504,14 +522,14 @@
         }
 
         .coach-specialty {
-            color: var(--color-red);
+            color: var(--color-cyan);
             font-weight: 700;
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
 
         .coach-description {
-            color: var(--color-gray);
+            color: var(--color-light-gray);
             line-height: 1.8;
             font-weight: 300;
         }
@@ -592,7 +610,7 @@
 
         /* Footer */
         .footer {
-            background: #0a0a0a;
+            background: var(--color-black);
             color: var(--color-light-gray);
             text-align: center;
             padding: 50px 0;
@@ -626,6 +644,11 @@
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .section-title lottie-player {
+                width: 35px;
+                height: 35px;
             }
 
             .section-subtitle {
@@ -713,13 +736,16 @@
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
-            <h2 class="section-title">🎁 สิทธิพิเศษที่คุณจะได้รับ</h2>
+            <h2 class="section-title">
+                <lottie-player src="./images/hands_19018030.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                สิทธิพิเศษที่คุณจะได้รับ
+            </h2>
             <p class="section-subtitle">เพียงเข้าร่วม MCN กับเรา คุณจะได้รับสิทธิประโยชน์มากมาย</p>
             
             <div class="benefits-grid">
                 <div class="benefit-card fade-in-up">
                     <div class="benefit-icon">
-                        <img src="./images/dollar_7994407.gif" alt="ไม่โดนหักค่าคอม">
+                        <lottie-player src="./images/dollar_7994407.json" background="transparent" speed="1" loop autoplay></lottie-player>
                     </div>
                     <h3>ไม่โดนหักค่าคอม</h3>
                     <p>รายได้ของคุณเป็นของคุณทั้งหมด ไม่มีการหักเปอร์เซ็นต์ใดๆ</p>
@@ -727,7 +753,7 @@
 
                 <div class="benefit-card fade-in-up">
                     <div class="benefit-icon">
-                        <img src="./images/video_16061083.gif" alt="คลิปปักตระกร้าฟรี">
+                        <lottie-player src="./images/footage_18113908.json" background="transparent" speed="1" loop autoplay></lottie-player>
                     </div>
                     <h3>คลิปปักตระกร้าฟรี</h3>
                     <p>รับคลิปปักตระกร้าคุณภาพสูงจากโค้ชมืออาชีพ ฟรี!</p>
@@ -735,7 +761,7 @@
 
                 <div class="benefit-card fade-in-up">
                     <div class="benefit-icon">
-                        <img src="./images/technology_19026678.gif" alt="ส่วนลด 50% คอร์ส AI">
+                        <lottie-player src="./images/technology_19026678.json" background="transparent" speed="1" loop autoplay></lottie-player>
                     </div>
                     <h3>ส่วนลด 50% คอร์ส AI</h3>
                     <p>เรียนคอร์สสอนทำคลิปปักตระกร้าด้วย AI ในราคาพิเศษ</p>
@@ -743,7 +769,7 @@
 
                 <div class="benefit-card fade-in-up">
                     <div class="benefit-icon">
-                        <img src="./images/service-tools_15370735.gif" alt="เครื่องมือครบครัน">
+                        <lottie-player src="./images/service-tools_15370735.json" background="transparent" speed="1" loop autoplay></lottie-player>
                     </div>
                     <h3>เครื่องมือครบครัน</h3>
                     <p>เข้าถึงเครื่องมือสำหรับนายหน้าและ AI Tools มากมาย</p>
@@ -755,7 +781,10 @@
     <!-- Coaches Section -->
     <section class="coaches">
         <div class="container">
-            <h2 class="section-title">👨‍🏫 พบกับโค้ชของเรา</h2>
+            <h2 class="section-title">
+                <lottie-player src="./images/coach_19018089.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                พบกับโค้ชของเรา
+            </h2>
             <p class="section-subtitle">ผู้เชี่ยวชาญด้าน AI และการสร้างคอนเทนต์</p>
             
             <div class="coaches-grid">
@@ -800,7 +829,7 @@
             <div class="stats-grid">
                 <div class="stat-item fade-in-up">
                     <div class="stat-icon">
-                        <img src="./images/online-order_15575683.gif" alt="ออเดอร์">
+                        <lottie-player src="./images/online-order_15575683.json" background="transparent" speed="1" loop autoplay></lottie-player>
                     </div>
                     <div class="stat-number" data-target="10000">0</div>
                     <div class="stat-label">มากกว่า 10,000+ ออเดอร์</div>
@@ -808,7 +837,7 @@
 
                 <div class="stat-item fade-in-up">
                     <div class="stat-icon">
-                        <img src="./images/protected_18873837.gif" alt="ยอดขาย">
+                        <lottie-player src="./images/protected_18873837.json" background="transparent" speed="1" loop autoplay></lottie-player>
                     </div>
                     <div class="stat-number" data-target="1000000">0</div>
                     <div class="stat-label">ยอดขายสูงสุดมากกว่า 1+ ล้าน</div>
@@ -816,7 +845,7 @@
 
                 <div class="stat-item fade-in-up">
                     <div class="stat-icon">
-                        <img src="./images/blogger_19003155.gif" alt="ครีเอเตอร์">
+                        <lottie-player src="./images/blogger_19003155.json" background="transparent" speed="1" loop autoplay></lottie-player>
                     </div>
                     <div class="stat-number" data-target="500">0</div>
                     <div class="stat-label">มากกว่า 500+ ครีเอเตอร์</div>
