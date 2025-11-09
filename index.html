@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เข้าร่วม MCN TikTok กับเรา - รับสิทธิพิเศษมากมาย</title>
-    
+    <title>เข้าร่วม MCN TikTok กับเรา - Tfuno.com</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/Tfuno_Logo.png">
+    <link rel="apple-touch-icon" href="./images/Tfuno_Logo.png">
+
     <!-- Google Fonts - Sarabun -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -250,6 +254,50 @@
             opacity: 0.8;
             line-height: 1.7;
             font-weight: 300;
+        }
+
+        /* Logo Styles */
+        .hero-logo {
+            margin-bottom: 25px;
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-logo img {
+            width: 180px;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 242, 234, 0.4));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .hero-logo img:hover {
+            transform: scale(1.08);
+            filter: drop-shadow(0 15px 40px rgba(255, 0, 80, 0.5));
+        }
+
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            width: 130px;
+            height: auto;
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logo img:hover {
+            opacity: 1;
         }
 
         /* Coaches Section */
@@ -499,6 +547,14 @@
                 padding: 18px 40px;
                 font-size: 1.2rem;
             }
+
+            .hero-logo img {
+                width: 140px;
+            }
+
+            .footer-logo img {
+                width: 100px;
+            }
         }
 
         /* Fade in animation on scroll */
@@ -518,7 +574,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="tiktok-badge">🎯 Tfuno.com MCN</div>
+            <div class="hero-logo">
+                <img src="./images/Tfuno_Logo.png" alt="Tfuno.com">
+            </div>
+            <div class="tiktok-badge">🎯 MCN TikTok</div>
             <h1>เข้าร่วม MCN กับเรา<br>รับสิทธิพิเศษเพียบ! 🚀</h1>
             <p>
                 พัฒนาทักษะการทำคลิปด้วย AI<br>
@@ -623,6 +682,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-logo">
+                <img src="./images/Tfuno_Logo.png" alt="Tfuno.com">
+            </div>
             <p>&copy; 2025 Tfuno.com MCN TikTok</p>
             <p>ติดต่อเรา: <a href="https://lin.ee/zSx6a4C" target="_blank" rel="noopener noreferrer">LINE Official Account</a></p>
         </div>
